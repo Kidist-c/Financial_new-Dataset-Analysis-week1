@@ -6,4 +6,4 @@ import numpy as np
 def add_returns(df):
     df['Return']=df['Close'].pct_change()
     df['LogReturn']=np.log(df["Close"] / df["Close"].shift(1))
-    return df
+    return df.dropna()
